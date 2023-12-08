@@ -1,0 +1,80 @@
+{
+  "name": "office-addin",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/office-addin/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/office-addin"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "office-addin:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "office-addin:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "office-addin:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "office-addin:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "office-addin:build:development"
+        },
+        "production": {
+          "buildTarget": "office-addin:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../coverage/apps/office-addin"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "start": {
+      "command": "office-addin-debugging start apps/office-addin/src/manifest.xml"
+    },
+    "start-web": {
+      "command": "office-addin-debugging start apps/office-addin/src/manifest.xml web"
+    },
+    "stop": {
+      "command": "office-addin-debugging stop apps/office-addin/src/manifest.xml"
+    },
+    "validate": {
+      "command": "office-addin-manifest validate apps/office-addin/src/manifest.xml"
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,30 @@
+{
+  "plugins": [
+    "office-addins"
+  ],
+  "extends": ["plugin:@nx/react", "plugin:office-addins/react", "../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "globals": {
+    "Office": "readonly",
+    "OfficeRuntime": "readonly",
+    "Excel": "readonly",
+    "process": "readonly"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {},
+      "parserOptions": {
+        "project": ["**/tsconfig.app.json"]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ]
+}
