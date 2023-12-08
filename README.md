@@ -3,10 +3,7 @@
 This is a template for developing an [Office.JS](https://learn.microsoft.com/en-us/office/dev/add-ins/) Excel add-in with **Nx**, **Vite** and **React 18**. The main advantage of using this template is a much faster development cycle. The development server starts in just 2-3 seconds and hot-reloaded changes are near instant.
 
 ## Key differences
-
-This template was generated using the [generator-office](https://www.npmjs.com/package/generator-office) generator which is based on the [Office-Addin-Taskpane-React](https://github.com/OfficeDev/Office-Addin-TaskPane-React) project.
-
-These are the key differences between this template and the default generated template:
+These are the key differences between this template and the default yeoman generated template:
 
 - Use Nx (Integrated React)
 - Use Vite instead of Webpack.
